@@ -20,16 +20,21 @@ exports.clear = function(){
 exports.getTotalHours = function(){
     var i;
     var total = 0;
-    if(allEvents.length != 0){
-for (i = 0; i < allEvents.length; i++) { 
-    total += allEvents[i][1];
-    return total.toString();
-}
-}else{
-    return "zero";
-}
+    
+    if(allEvents.length == 0){
+        return "zero"
+    }else{
+        for (i = 0; i < allEvents.length; i++) { 
+        let hours = parseInt(allEvents[i][1])
+        total += hours;
+        }
+    return total;
+    }
 }
 
 exports.getLastEvent = function(){
     return allEvents[allEvents.length-1]
 }
+ exports.getNumberOfEvents = function(){
+     return allEvents.length
+ }
