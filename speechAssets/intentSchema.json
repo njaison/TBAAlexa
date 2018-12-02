@@ -1,0 +1,114 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "volunteer hours",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "never mind",
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "die",
+                        "exit",
+                        "sleep",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AddHoursIntent",
+                    "slots": [
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "event",
+                            "type": "EVENT"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "note that i worked {number} hours at {event} {date}"
+                    ]
+                },
+                {
+                    "name": "EmailHoursIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "ClearHoursIntent",
+                    "slots": [],
+                    "samples": [
+                        "clear my list",
+                        "empty my hours"
+                    ]
+                },
+                {
+                    "name": "ListTotalHoursIntent",
+                    "slots": [],
+                    "samples": [
+                        "How many hours do I have"
+                    ]
+                },
+                {
+                    "name": "GetLastEventIntent",
+                    "slots": [],
+                    "samples": [
+                        "When did I last volunteer",
+                        "What was my last event"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "EVENT",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "the library"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the soup kitchen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the hospital"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tutoring"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
