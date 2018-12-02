@@ -36,11 +36,11 @@ const handlers = {
 		this.emit(':ask', speechOutput, reprompt);
 	},
    'AMAZON.CancelIntent': function () {
-		speechOutput = 'Placeholder response for AMAZON.CancelIntent';
+		speechOutput = 'Goodbye';
 		this.emit(':tell', speechOutput);
 	},
    'AMAZON.StopIntent': function () {
-		speechOutput = 'Placeholder response for AMAZON.StopIntent.';
+		speechOutput = 'Goodbye';
 		this.emit(':tell', speechOutput);
    },
    'SessionEndedRequest': function () {
@@ -88,7 +88,7 @@ const handlers = {
 		
         myevent.addEvent(eventSlot, numberSlot, dateSlot);
 		//Your custom intent handling goes here
-		speechOutput = "I have successfully added " + eventSlot ;
+		speechOutput = "I have successfully added event number " + volunteer.getNumberOfEvents() ;
 		this.emit(":ask", speechOutput, speechOutput);
     },
 	'EmailHoursIntent': function () {
@@ -102,12 +102,11 @@ const handlers = {
 		this.emit(":ask", speechOutput, speechOutput);
     },
     'ListTotalHoursIntent': function(){
-        speechOutput = '';
         speechOutput = "The total of your inputed hours is " + volunteer.getTotalHours();
         this.emit(":ask", speechOutput)
     },
     'GetLastEventIntent': function(){
-        speechOutput = "Your last event was " + volunteer.getLastEvent()[0] + " for " + volunteer.getLastEvent()[1] + " hours, on" + volunteer.getLastEvent()[2]
+        speechOutput = "Your last event was " + volunteer.getLastEvent()[0] + " for " + volunteer.getLastEvent()[1] + " hours, on " + volunteer.getLastEvent()[2]
         this.emit(":ask", speechOutput)
     },
     'ClearHoursIntent' : function(){
