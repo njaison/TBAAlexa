@@ -86,11 +86,9 @@ const handlers = {
 		var dateSlot = resolveCanonical(this.event.request.intent.slots.date);
 		console.log(dateSlot);
 		
-		console.log("Loaded up to line 88");
         myevent.addEvent(eventSlot, numberSlot, dateSlot);
-        console.log("Loaded up to line 90")
 		//Your custom intent handling goes here
-		speechOutput = "I have sucessfully added " + eventSlot ;
+		speechOutput = "I have successfully added " + eventSlot ;
 		this.emit(":ask", speechOutput, speechOutput);
     },
 	'EmailHoursIntent': function () {
@@ -109,12 +107,13 @@ const handlers = {
         this.emit(":ask", speechOutput)
     },
     'GetLastEventIntent': function(){
-        speechOutput = "Your last event was" + volunteer.getLastEvent()[0] + " for " + volunteer.getLastEvent()[1] + " hours, on" + volunteer.getLastEvent()[2]
+        speechOutput = "Your last event was " + volunteer.getLastEvent()[0] + " for " + volunteer.getLastEvent()[1] + " hours, on" + volunteer.getLastEvent()[2]
+        this.emit(":ask", speechOutput)
     },
     'ClearHoursIntent' : function(){
         speechOutput = '';
         volunteer.clear();
-        speechOutput = "Sucessfully cleared all hours"
+        speechOutput = "Successfully cleared all hours"
         this.emit(":ask", speechOutput)
     },
 	'Unhandled': function () {
